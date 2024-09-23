@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Automated Meeting Room</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-800 w-full h-screen">
+    <header class="antialiased">
+      <nav class="bg-white border-gray-200 px-4 lg:px-6 py-4 dark:bg-gray-900">
+        <div class="flex flex-wrap justify-between items-center">
+          <div class="flex justify-start items-center">
+            <a href="https://flowbite.com" class="flex mr-4">
+              <!-- <img src="https://flowbite.s3.amazonaws.com/logo.svg"alt="FlowBite Logo" /> -->
+              <div class="mr-3 my-2 h-4 flex justify-centre items-center">
+                <svg
+                  id="logo-86"
+                  width="30"
+                  height="30"
+                  viewBox="0 0 40 40"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    class="ccustom"
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M25.5557 11.6853C23.9112 10.5865 21.9778 10 20 10V0C23.9556 0 27.8224 1.17298 31.1114 3.37061C34.4004 5.56823 36.9638 8.69181 38.4776 12.3463C39.9913 16.0008 40.3874 20.0222 39.6157 23.9018C38.844 27.7814 36.9392 31.3451 34.1421 34.1421C31.3451 36.9392 27.7814 38.844 23.9018 39.6157C20.0222 40.3874 16.0008 39.9913 12.3463 38.4776C8.69181 36.9638 5.56823 34.4004 3.37061 31.1114C1.17298 27.8224 0 23.9556 0 20H10C10 21.9778 10.5865 23.9112 11.6853 25.5557C12.7841 27.2002 14.3459 28.4819 16.1732 29.2388C18.0004 29.9957 20.0111 30.1937 21.9509 29.8078C23.8907 29.422 25.6725 28.4696 27.0711 27.0711C28.4696 25.6725 29.422 23.8907 29.8078 21.9509C30.1937 20.0111 29.9957 18.0004 29.2388 16.1732C28.4819 14.3459 27.2002 12.7841 25.5557 11.6853Z"
+                    fill="#007DFC"
+                  ></path>
+                  <path
+                    class="ccustom"
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M10 5.16562e-07C10 1.31322 9.74135 2.61358 9.2388 3.82683C8.73625 5.04009 7.99966 6.14248 7.07107 7.07107C6.14249 7.99966 5.0401 8.73625 3.82684 9.2388C2.61358 9.74134 1.31322 10 5.4439e-06 10L5.00679e-06 20C2.62644 20 5.22716 19.4827 7.65368 18.4776C10.0802 17.4725 12.285 15.9993 14.1421 14.1421C15.9993 12.285 17.4725 10.0802 18.4776 7.65367C19.4827 5.22715 20 2.62643 20 -3.81469e-06L10 5.16562e-07Z"
+                    fill="#007DFC"
+                  ></path>
+                </svg>
+              </div>
+              <span
+                class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white"
+                >Coders, I Guess??</span
+              >
+            </a>
+          </div>
+          <div class="flex items-center lg:order-2">
+            <!--
+                    <button type="button" data-dropdown-toggle="notification-dropdown" class="p-2 mr-1 text-gray-500 rounded-lg hover:text-gray-900 hover:bg-gray-100 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-700 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600">
+                        <span class="sr-only">View notifications</span>
+                        <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 14 20"><path d="M12.133 10.632v-1.8A5.406 5.406 0 0 0 7.979 3.57.946.946 0 0 0 8 3.464V1.1a1 1 0 0 0-2 0v2.364a.946.946 0 0 0 .021.106 5.406 5.406 0 0 0-4.154 5.262v1.8C1.867 13.018 0 13.614 0 14.807 0 15.4 0 16 .538 16h12.924C14 16 14 15.4 14 14.807c0-1.193-1.867-1.789-1.867-4.175ZM3.823 17a3.453 3.453 0 0 0 6.354 0H3.823Z"/></svg>
+                    </button>
+
+                    <button type="button" data-dropdown-toggle="apps-dropdown" class="p-2 text-gray-500 rounded-lg hover:text-gray-900 hover:bg-gray-100 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-700 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600">
+                        <span class="sr-only">View notifications</span>
+                        <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 18">
+                          <path d="M6.143 0H1.857A1.857 1.857 0 0 0 0 1.857v4.286C0 7.169.831 8 1.857 8h4.286A1.857 1.857 0 0 0 8 6.143V1.857A1.857 1.857 0 0 0 6.143 0Zm10 0h-4.286A1.857 1.857 0 0 0 10 1.857v4.286C10 7.169 10.831 8 11.857 8h4.286A1.857 1.857 0 0 0 18 6.143V1.857A1.857 1.857 0 0 0 16.143 0Zm-10 10H1.857A1.857 1.857 0 0 0 0 11.857v4.286C0 17.169.831 18 1.857 18h4.286A1.857 1.857 0 0 0 8 16.143v-4.286A1.857 1.857 0 0 0 6.143 10Zm10 0h-4.286A1.857 1.857 0 0 0 10 11.857v4.286c0 1.026.831 1.857 1.857 1.857h4.286A1.857 1.857 0 0 0 18 16.143v-4.286A1.857 1.857 0 0 0 16.143 10Z"/>
+                        </svg>              
+                      </button> -->
+
+            <button
+              type="button"
+              class="flex mx-3 text-sm bg-gray-800 rounded-full md:mr-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
+              id="user-menu-button"
+              aria-expanded="false"
+              data-dropdown-toggle="dropdown"
+            >
+              <span class="sr-only">Open user menu</span>
+              <img
+                class="w-8 h-8 rounded-full"
+                src="https://avatar.iran.liara.run/public/43"
+                alt="user photo"
+              />
+            </button>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <form action="#" method="post" id="single-form">
+      <div id="before" class="flex justify-center items-center text-white">
+        <div class="flex justify-center flex-col items-stretch w-1/4">
+          <div class="py-4 pb-0 px-4">
+            <label
+              for="name"
+              class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+              >Meeting Name</label
+            >
+            <input
+              type="text"
+              name="name"
+              id="name"
+              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+              placeholder="Type Meeting Name"
+              required="true"
+            />
+          </div>
+          <div class="py-4 pb-0 px-4">
+            <label
+              for="name"
+              class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+              >Attendees Emails</label
+            >
+            <textarea
+              id="description"
+              rows="4"
+              class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+              minlength="5"
+              placeholder="Mention attendees email, seperated by ',' comma"
+            ></textarea>
+          </div>
+          <div class="py-4 pb-0 mx-4">
+            <button
+              type="submit"
+              class="text-white flex justify-center bg-[#2563eb] items-center hover:bg-primary-800 font-medium rounded-lg text-sm py-2.5 text-center w-full"
+            >
+              <svg
+                class="mr-1 -ml-1 w-6 h-6"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+              Create New Meeting
+            </button>
+          </div>
+        </div>
+      </div>
+    </form>
+    <div
+      id="after"
+      class="hidden flex justify-center items-center text-white text-center"
+    >
+      <p class="font-semibold my-4">
+        Meeting Link Created <br class="mb-4" />
+        <a href="#" class="text-[#2563eb]" id="link-meet"></a>
+      </p>
+    </div>
+
+    <script>
+      const nameInput = document.querySelectorAll("input")[0];
+      const emailsInput = document.querySelectorAll("textarea")[0];
+      emailsInput;
+      const submitButton = document.querySelectorAll(
+        "button[type='submit']"
+      )[0];
+      const singleForm = document.querySelectorAll("#single-form")[0];
+
+      singleForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        document.querySelector("#before").classList.add("hidden");
+
+        const myHeaders = new Headers();
+        myHeaders.append("Content-Type", "application/json");
+        const emailsText = emailsInput.value + ",";
+        const raw = JSON.stringify({
+          name: nameInput.value,
+          attendees: emailsText
+            .trim()
+            .split(",")
+            .filter((v) => v.trim())
+            .map((v) => v.trim()),
+        });
+
+        const requestOptions = {
+          method: "POST",
+          headers: myHeaders,
+          body: raw,
+          redirect: "follow",
+        };
+
+        fetch("http://localhost:5001/api/v1/meetings/", requestOptions)
+          .then((response) => response.text())
+          .then((result) => {
+            const ress = JSON.parse(result);
+            document.querySelector("#after").classList.remove("hidden");
+            document.querySelector("#link-meet").innerHTML =
+              ress["data"]["link"];
+            document.querySelector("#link-meet").href = ress["data"]["link"];
+          })
+          .catch((error) => console.error(error));
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,7 @@
+E0001 - Not found error
+E0002 - The value provided already exists error
+E0003 - The token is invalid
+E0004 - Validation error
+E0005 - Unknown internal server error.
+E0006 - Not Authorized to enter
+E0007 - Not Passing values
